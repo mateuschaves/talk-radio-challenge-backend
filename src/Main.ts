@@ -8,7 +8,7 @@ class Main {
 
 
     initialize() {
-        console.log(File.readFile('games.log', 'utf8'));
+        File.readFile('games.log', 'utf8');
     }
 }
 
