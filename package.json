@@ -7,10 +7,14 @@
   "license": "MIT",
   "scripts": {
     "start": "tsc && node dist/app.js",
-    "start:dev": "ts-node-dev --respawn --transpileOnly ./src/index.ts"
+    "start:dev": "ts-node-dev --respawn --transpileOnly ./src/Main.ts"
   },
-  "dependencies": {},
+  "dependencies": {
+    "signale": "^1.4.0"
+  },
   "devDependencies": {
+    "@types/node": "^14.0.10",
+    "@types/signale": "^1.4.1",
     "ts-node-dev": "^1.0.0-pre.44",
     "tslint": "^6.1.2",
     "typescript": "^3.9.3"
