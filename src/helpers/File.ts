@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-import { EncondingOptions } from '../shared/interfaces';
+import { EncondingOptions } from '../shared/types';
 
 class File {
 
