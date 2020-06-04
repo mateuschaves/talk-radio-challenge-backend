@@ -1,4 +1,5 @@
 import { Log } from './';
+import { PlayersNames } from '../shared/interfaces';
 
 class Game {
     public getAllGames(fileContent: string): string[] | null {
@@ -9,9 +10,9 @@ class Game {
         return null;
     }
 
-    public getAllPlayersFromGame(game: string): string[] | null {
+    public getAllPlayersFromGame(game: string): Set<string> {
 
-        let players = new Set();
+        let players = new Set<string>();
 
         const lines = game.split(/\r\n|\r|\n/g);
 
@@ -26,10 +27,10 @@ class Game {
             players.add(deadPlayerName)
         });
 
-        return null;
+        return players;
     }
 
-    public getPlayersNamesFromKillEventLine(line: string): { killerPlayerName: string, deadPlayerName: string } {
+    public getPlayersNamesFromKillEventLine(line: string): PlayersNames {
         const key = 'killed';
         const indexOfStartKey = line.indexOf(key);
         const indexOfEndKey = indexOfStartKey + key.length;
