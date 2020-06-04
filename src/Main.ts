@@ -6,9 +6,9 @@ class Main {
         this.initialize();
     }
 
-
     initialize() {
-        File.readFile('games.log', 'utf8');
+        const content = File.readFile('games.log', 'utf8');
+        console.log(File.getAllGames(content));
     }
 }
 

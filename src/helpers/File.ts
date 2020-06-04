@@ -30,6 +30,14 @@ class File {
             return null;
         }
     }
+
+    public getAllGames(fileContent: string): string[] | null {
+        if (fileContent.length)
+            return fileContent.split('InitGame');
+        else
+            Log.error('empty log file');
+        return null;
+    }
 }
 
 export default new File();
