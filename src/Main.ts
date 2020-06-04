@@ -1,5 +1,5 @@
 
-import { File } from './helpers'
+import { File, Game } from './helpers'
 
 class Main {
     constructor() {
@@ -8,7 +8,9 @@ class Main {
 
     initialize() {
         const content = File.readFile('games.log', 'utf8');
-        console.log(File.getAllGames(content));
+        const [first, second, game] = Game.getAllGames(content);
+        Game.getAllPlayersFromGame(game);
+
     }
 }
 
