@@ -12,10 +12,6 @@ class GameController {
 
     show = (request: Request, response: Response) => {
         const { id } = request.params;
-        if (!id)
-            return response.status(400).json({
-                message: 'game not found'
-            });
 
         const game = this.games[id];
         if (game)

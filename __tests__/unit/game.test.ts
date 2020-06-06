@@ -1,4 +1,4 @@
-import { Game, File } from '../../src/helpers';
+import { Game } from '../../src/helpers';
 import { GameMock, GamesMock } from '../../src/assets/mocks';
 
 describe('Game', () => {
