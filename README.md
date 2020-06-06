@@ -45,10 +45,8 @@ $ npm run build
 ```bash
 
 # yarn
-
 $ yarn test
 
 # npm
-
 $ npm run test
 ```
