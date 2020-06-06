@@ -41,7 +41,7 @@ describe('Game', () => {
         }
     });
 
-    it('shoud be able to parse a game', () => {
+    it('should be able to parse a game', () => {
         const gameId = 1
         const gameParsed = Game.parseGame(GameMock, gameId);
 
