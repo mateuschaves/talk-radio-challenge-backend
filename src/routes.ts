@@ -1,6 +1,6 @@
 import { Router } from 'express';
 
-import { GameController } from './controllers';
+import { GameController, RankController } from './controllers';
 
 
 class Routes {
@@ -14,6 +14,7 @@ class Routes {
 
     initializeRoutes() {
         this.routes.get('/game/:id', GameController.show);
+        this.routes.get('/rank/general', RankController.show)
     }
 
 

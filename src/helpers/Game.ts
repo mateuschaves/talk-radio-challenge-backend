@@ -87,6 +87,15 @@ class Game {
 
     }
 
+    public proccessGeneralRank(fileContent: string): any {
+        const players = [...this.getAllPlayersFromGame(fileContent)];
+        return players.map(player => ({
+            player,
+            kills: this.getPlayerScore(player, fileContent)
+        }))
+            .sort((a, b) => b.kills - a.kills);
+    }
+
     public parseGame(game: string, id: number): IGame {
 
         const players = [...this.getAllPlayersFromGame(game)];
