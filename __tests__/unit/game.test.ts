@@ -40,4 +40,20 @@ describe('Game', () => {
             expect(error.message).toBe('log file is empty')
         }
     });
+
+    it('shoud be able to parse a game', () => {
+        const gameId = 1
+        const gameParsed = Game.parseGame(GameMock, gameId);
+
+        expect(gameParsed).toMatchObject({
+            [`game_${gameId}`]: {
+                total_kills: 11,
+                players: new Set(['Isgalamido', 'Mocinha']),
+                kills: {
+                    'Isgalamido': -7,
+                    'Mocinha': 0
+                }
+            }
+        });
+    });
 });
