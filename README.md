@@ -94,3 +94,8 @@ Aceita os logs de um jogo como parâmetro e retorna a quantidade de kills que ho
 parseGame(game: string, id: number): IGame
 ```
 Aceita os logs de um jogo e o seu id e retorna o no formato especificado as informações da partida.
+
+```typescript
+proccessGameLogFile(file: string): IGame[] 
+```
+Aceita o conteúdo do arquivo de log e retorna um array com todos os jogos no formato especificado.
