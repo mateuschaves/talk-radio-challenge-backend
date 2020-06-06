@@ -9,9 +9,8 @@ class Main {
     initialize() {
         try {
             const content = File.readFile('games.log', 'utf8');
-            const [first, second, game] = Game.getAllGames(content);
-            const gameParsed = Game.parseGame(game);
-            console.log(gameParsed);
+            const games = Game.proccessGameLogFile(content);
+            console.log(games);
         } catch (error) {
             Log.error(error)
         }

@@ -89,12 +89,12 @@ class Game {
 
     }
 
-    public parseGame(game: string): IGame {
+    public parseGame(game: string, id: number): IGame {
 
         const players = this.getAllPlayersFromGame(game);
         const total_kills = this.getAllKillsFromGame(game);
 
-        let game_parsed: IGame = {
+        let game_parsed = {
             total_kills,
             players,
             kills: {}
@@ -110,7 +110,14 @@ class Game {
             }
         });
 
-        return game_parsed;
+        return {
+            [`game_${id}`]: game_parsed
+        };
+    }
+
+    public proccessGameLogFile(file: string): IGame[] {
+        const games = this.getAllGames(file);
+        return games.map((game, index) => this.parseGame(game, index));
     }
 }
 
