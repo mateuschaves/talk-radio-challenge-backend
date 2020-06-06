@@ -32,4 +32,12 @@ describe('Game', () => {
     it('should be able to return all games from log file', () => {
         expect(Game.getAllGames(GamesMock).length).toBe(21 + 1);
     });
+
+    it('should not crash when game log file is empty', () => {
+        try {
+            Game.getAllGames('')
+        } catch (error) {
+            expect(error.message).toBe('log file is empty')
+        }
+    });
 });
