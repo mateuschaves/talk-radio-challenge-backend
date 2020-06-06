@@ -1,4 +1,3 @@
-import { Log } from './';
 import { IPlayersNames, IGame } from '../shared/interfaces';
 
 class Game {
