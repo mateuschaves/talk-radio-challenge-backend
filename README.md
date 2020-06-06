@@ -99,3 +99,10 @@ Aceita os logs de um jogo e o seu id e retorna o no formato especificado as info
 proccessGameLogFile(file: string): IGame[] 
 ```
 Aceita o conteúdo do arquivo de log e retorna um array com todos os jogos no formato especificado.
+
+# ``File.ts``
+
+```typescript
+readFile(fileName: string, encoding: EncondingOptions): string | null
+```
+Aceita o nome do arquivo e o tipo de codificação e retorna o conteúdo do arquivo informado.
