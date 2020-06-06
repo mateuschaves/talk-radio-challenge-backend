@@ -18,13 +18,11 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "jest": "^26.0.1",
-    "mongoose": "^5.9.18",
     "signale": "^1.4.0",
     "supertest": "^4.0.2"
   },
   "devDependencies": {
     "@sucrase/jest-plugin": "^2.0.0",
-    "@types/mongoose": "^5.7.22",
     "@types/node": "^14.0.10",
     "@types/signale": "^1.4.1",
     "ts-node-dev": "^1.0.0-pre.44",
