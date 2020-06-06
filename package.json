@@ -7,12 +7,19 @@
   "license": "MIT",
   "scripts": {
     "start": "tsc && node dist/app.js",
-    "start:dev": "ts-node-dev --respawn --transpileOnly ./src/Main.ts"
+    "start:dev": "ts-node-dev --respawn --transpileOnly ./src/Main.ts",
+    "test": "jest"
   },
   "dependencies": {
-    "signale": "^1.4.0"
+    "@types/jest": "^25.2.3",
+    "cors": "^2.8.5",
+    "jest": "^26.0.1",
+    "mongoose": "^5.9.18",
+    "signale": "^1.4.0",
+    "supertest": "^4.0.2"
   },
   "devDependencies": {
+    "@sucrase/jest-plugin": "^2.0.0",
     "@types/node": "^14.0.10",
     "@types/signale": "^1.4.1",
     "ts-node-dev": "^1.0.0-pre.44",
