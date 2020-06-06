@@ -69,3 +69,8 @@ Aceita o conteúdo do arquivo de log como parâmetro e retorna um array de ```st
 getAllPlayersFromGame(game: string): Set<string>
 ```
 Aceita os logs de um jogo como parâmetro e retorma os jogadores do jogo em uma estrutura de dados do tipo ``Set([])`` que não permite elementos repetidos.
+
+```typescript
+getGameLines(game: string): string[]
+```
+Também aceita os logs de um jogo como parâmetro, porém retorna um array de string, onde cada elemento do array é uma linha de log do jogo.
