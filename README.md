@@ -84,3 +84,8 @@ Aceita uma linha de log como parâmetro e retorna, se existir, um objeto content
 getPlayerScore(player: string, game: string): number
 ```
 Aceita o nome do jogador e o conteúdo de log de um jogo como parâmetro, e retorna a pontuação do jogador.
+
+```typescript
+getAllKillsFromGame(game: string): number
+```
+Aceita os logs de um jogo como parâmetro e retorna a quantidade de kills que houveram na partida.
