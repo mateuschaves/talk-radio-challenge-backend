@@ -24,4 +24,8 @@ describe('Game', () => {
             expect(error.message).toBe('<world> is not a player');
         }
     });
+
+    it('should be able to return correct game kills amount', () => {
+        expect(Game.getAllKillsFromGame(GameMock)).toBe(11);
+    });
 });
