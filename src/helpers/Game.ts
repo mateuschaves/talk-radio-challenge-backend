@@ -61,7 +61,7 @@ class Game {
             const deadPlayerName = line.slice(indexOfEndKey, line.lastIndexOf('by')).trim();
 
             if (killerPlayerName === deadPlayerName)
-                return score;
+                return score - 1;
 
             if (killerPlayerName === player)
                 return score + 1;
