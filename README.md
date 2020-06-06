@@ -79,3 +79,8 @@ Também aceita os logs de um jogo como parâmetro, porém retorna um array de st
 getPlayersNamesFromKillEventLine(line: string): IPlayersNames
 ```
 Aceita uma linha de log como parâmetro e retorna, se existir, um objeto contento o nome do jogador que matou e o nome do jogador que morreu.
+
+```typescript
+getPlayerScore(player: string, game: string): number
+```
+Aceita o nome do jogador e o conteúdo de log de um jogo como parâmetro, e retorna a pontuação do jogador.
