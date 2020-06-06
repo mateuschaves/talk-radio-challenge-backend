@@ -1,5 +1,5 @@
 import { Game, File } from '../../src/helpers';
-import { GameMock } from '../../src/assets/mocks';
+import { GameMock, GamesMock } from '../../src/assets/mocks';
 
 describe('Game', () => {
     it('should be able return all player from a game', () => {
@@ -27,5 +27,9 @@ describe('Game', () => {
 
     it('should be able to return correct game kills amount', () => {
         expect(Game.getAllKillsFromGame(GameMock)).toBe(11);
+    });
+
+    it('should be able to return all games from log file', () => {
+        expect(Game.getAllGames(GamesMock).length).toBe(21 + 1);
     });
 });
