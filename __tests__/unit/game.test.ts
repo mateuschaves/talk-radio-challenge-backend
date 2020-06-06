@@ -8,4 +8,20 @@ describe('Game', () => {
         expect(players.has('Isgalamido')).toBe(true);
         expect(players.has('Mocinha')).toBe(true);
     });
+
+    it('should be able to return correct player score', () => {
+        [
+            { player: 'Isgalamido', score: -7 },
+            { player: 'Mocinha', score: 0 }]
+            .map(({ player, score }) => expect(Game.getPlayerScore(player, GameMock)).toBe(score));
+    });
+
+    it('should not be able to return score of a invalid player name', () => {
+        const invalidPlayerName = '<world>';
+        try {
+            Game.getPlayerScore(invalidPlayerName, GameMock);
+        } catch (error) {
+            expect(error.message).toBe('<world> is not a player');
+        }
+    });
 });
