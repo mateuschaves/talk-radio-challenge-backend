@@ -50,17 +50,13 @@ class Game {
         if (player === '<world>')
             throw new Error('<world> is not a player');
 
-        const key = 'killed';
 
         const lines = this.getGameLines(game);
 
         return lines.reduce((score, line) => {
-            const indexOfStartKey = line.indexOf(key);
-            const indexOfEndKey = indexOfStartKey + key.length;
-            const killerPlayerName = line.slice(line.lastIndexOf(':') + 1, indexOfStartKey).trim();
-            const deadPlayerName = line.slice(indexOfEndKey, line.lastIndexOf('by')).trim();
+            const { killerPlayerName, deadPlayerName } = this.getPlayersNamesFromKillEventLine(line);
 
-            if (killerPlayerName === deadPlayerName)
+            if (killerPlayerName === deadPlayerName && player == killerPlayerName)
                 return score - 1;
 
             if (killerPlayerName === player)
@@ -74,13 +70,16 @@ class Game {
 
     }
 
+
     public getAllKillsFromGame(game: string): number {
 
         const lines = this.getGameLines(game);
 
         return lines.reduce((kills, line) => {
 
-            if (line.includes('killed'))
+            const { killerPlayerName, deadPlayerName } = this.getPlayersNamesFromKillEventLine(line);
+
+            if (line.includes('killed') && (killerPlayerName != deadPlayerName))
                 return kills + 1;
             else
                 return kills;

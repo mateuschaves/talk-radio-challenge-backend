@@ -12,8 +12,8 @@ describe('Game', () => {
         expect(response.body).toMatchObject({
             [`game_${4}`]: {
                 "kills": {
-                    "Assasinu Credi": 12,
-                    "Dono da Bola": 9,
+                    "Assasinu Credi": 11,
+                    "Dono da Bola": 5,
                     "Isgalamido": 19,
                     "Zeh": 20
                 },
@@ -23,7 +23,7 @@ describe('Game', () => {
                     "Zeh",
                     "Assasinu Credi"
                 ],
-                "total_kills": 105
+                "total_kills": 100
             }
         });
     });

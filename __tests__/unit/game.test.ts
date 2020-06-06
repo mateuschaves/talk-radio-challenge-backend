@@ -11,7 +11,7 @@ describe('Game', () => {
 
     it('should be able to return correct player score', () => {
         [
-            { player: 'Isgalamido', score: -7 },
+            { player: 'Isgalamido', score: -9 },
             { player: 'Mocinha', score: 0 }]
             .map(({ player, score }) => expect(Game.getPlayerScore(player, GameMock)).toBe(score));
     });
@@ -26,7 +26,7 @@ describe('Game', () => {
     });
 
     it('should be able to return correct game kills amount', () => {
-        expect(Game.getAllKillsFromGame(GameMock)).toBe(11);
+        expect(Game.getAllKillsFromGame(GameMock)).toBe(9);
     });
 
     it('should be able to return all games from log file', () => {
@@ -47,10 +47,10 @@ describe('Game', () => {
 
         expect(gameParsed).toMatchObject({
             [`game_${gameId}`]: {
-                total_kills: 11,
-                players: new Set(['Isgalamido', 'Mocinha']),
+                total_kills: 9,
+                players: ['Isgalamido', 'Mocinha'],
                 kills: {
-                    'Isgalamido': -7,
+                    'Isgalamido': -9,
                     'Mocinha': 0
                 }
             }
