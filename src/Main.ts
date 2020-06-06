@@ -10,9 +10,8 @@ class Main {
         try {
             const content = File.readFile('games.log', 'utf8');
             const [first, second, game] = Game.getAllGames(content);
-            const [firstPlayer] = Game.getAllPlayersFromGame(game);
-            const score = Game.getPlayerScore('<world>', game);
-            const allKillsFromGame = Game.getAllKillsFromGame(game);
+            const gameParsed = Game.parseGame(game);
+            console.log(gameParsed);
         } catch (error) {
             Log.error(error)
         }

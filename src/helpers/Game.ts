@@ -1,5 +1,5 @@
 import { Log } from './';
-import { PlayersNames } from '../shared/interfaces';
+import { IPlayersNames, IGame } from '../shared/interfaces';
 
 class Game {
     public getAllGames(fileContent: string): string[] | null {
@@ -34,7 +34,7 @@ class Game {
         return game.split(/\r\n|\r|\n/g);
     }
 
-    public getPlayersNamesFromKillEventLine(line: string): PlayersNames {
+    public getPlayersNamesFromKillEventLine(line: string): IPlayersNames {
         const key = 'killed';
         const indexOfStartKey = line.indexOf(key);
         const indexOfEndKey = indexOfStartKey + key.length;
@@ -87,6 +87,30 @@ class Game {
                 return kills;
         }, 0);
 
+    }
+
+    public parseGame(game: string): IGame {
+
+        const players = this.getAllPlayersFromGame(game);
+        const total_kills = this.getAllKillsFromGame(game);
+
+        let game_parsed: IGame = {
+            total_kills,
+            players,
+            kills: {}
+        }
+
+        players.forEach(player => {
+            game_parsed = {
+                ...game_parsed,
+                kills: {
+                    ...game_parsed.kills,
+                    [`${player}`]: this.getPlayerScore(player, game)
+                }
+            }
+        });
+
+        return game_parsed;
     }
 }
 
