@@ -1,4 +1,4 @@
-# Talk Radio Challange
+# Talk Radio Challenge
 Teste prático para a vaga de Desenvolvedor Backend NodeJS Pleno
 
 
