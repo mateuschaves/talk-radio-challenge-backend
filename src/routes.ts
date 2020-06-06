@@ -2,6 +2,7 @@ import { Router } from 'express';
 
 import { GameController } from './controllers';
 
+
 class Routes {
 
     routes: Router;
@@ -14,6 +15,8 @@ class Routes {
     initializeRoutes() {
         this.routes.get('/game/:id', GameController.show);
     }
+
+
 }
 
 

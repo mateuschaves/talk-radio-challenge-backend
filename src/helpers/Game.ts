@@ -1,6 +1,18 @@
 import { IPlayersNames, IGame } from '../shared/interfaces';
 
 class Game {
+
+
+    private games: IGame[] = [];
+
+    public setGames(games: IGame[]): void {
+        this.games = games;
+    }
+
+    public getGames(): IGame[] {
+        return this.games;
+    }
+
     public getAllGames(fileContent: string): string[] | null {
         if (fileContent.length)
             return fileContent.split('InitGame');
