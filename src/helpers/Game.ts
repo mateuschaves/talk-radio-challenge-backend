@@ -74,6 +74,20 @@ class Game {
         }, 0);
 
     }
+
+    public getAllKillsFromGame(game: string): number {
+
+        const lines = this.getGameLines(game);
+
+        return lines.reduce((kills, line) => {
+
+            if (line.includes('killed'))
+                return kills + 1;
+            else
+                return kills;
+        }, 0);
+
+    }
 }
 
 export default new Game();
