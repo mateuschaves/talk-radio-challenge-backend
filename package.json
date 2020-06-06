@@ -8,7 +8,7 @@
   "scripts": {
     "start": "tsc && node dist/server.js",
     "start:dev": "ts-node-dev --respawn --transpileOnly ./src/server.ts",
-    "build": "yarn tsc",
+    "build": "tsc",
     "test": "jest"
   },
   "dependencies": {
