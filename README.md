@@ -63,4 +63,9 @@ Aqui estão concentrada todas as funções auxiliares relacionadas a captura das
 ```typescript
 getAllGames(fileContent: string): string[] | null
 ```
-Aceita o conteúdo do arquivo de log como parâmetro e retorna um array de ```string``` onde cada elemento são todos os logs de um jogo
+Aceita o conteúdo do arquivo de log como parâmetro e retorna um array de ```string``` onde cada elemento são todos os logs de um jogo.
+
+```typescript
+getAllPlayersFromGame(game: string): Set<string>
+```
+Aceita os logs de um jogo como parâmetro e retorma os jogadores do jogo em uma estrutura de dados do tipo ``Set([])`` que não permite elementos repetidos.
