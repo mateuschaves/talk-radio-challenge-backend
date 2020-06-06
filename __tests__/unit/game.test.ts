@@ -56,4 +56,18 @@ describe('Game', () => {
             }
         });
     });
+
+    it('should be able to proccess entire game log file', () => {
+        const gamesParsed = Game.proccessGameLogFile(GamesMock);
+        const games = Game.getAllGames(GamesMock);
+
+        gamesParsed.forEach((game, index) => {
+            expect(game).toMatchObject({
+                [`game_${index}`]: {
+                    total_kills: Game.getAllKillsFromGame(games[index]),
+                    players: Game.getAllPlayersFromGame(games[index]),
+                }
+            });
+        });
+    });
 });
