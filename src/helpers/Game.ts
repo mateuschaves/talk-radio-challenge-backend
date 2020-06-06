@@ -6,8 +6,7 @@ class Game {
         if (fileContent.length)
             return fileContent.split('InitGame');
         else
-            Log.error('empty log file');
-        return null;
+            throw new Error('log file is empty');
     }
 
     public getAllPlayersFromGame(game: string): Set<string> {
