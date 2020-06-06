@@ -9,8 +9,9 @@ class Main {
     initialize() {
         const content = File.readFile('games.log', 'utf8');
         const [first, second, game] = Game.getAllGames(content);
-        Game.getAllPlayersFromGame(game);
+        const [firstPlayer] = Game.getAllPlayersFromGame(game);
 
+        const score = Game.getPlayerScore(firstPlayer, game);
     }
 }
 
