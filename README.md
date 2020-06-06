@@ -74,3 +74,8 @@ Aceita os logs de um jogo como parâmetro e retorma os jogadores do jogo em uma 
 getGameLines(game: string): string[]
 ```
 Também aceita os logs de um jogo como parâmetro, porém retorna um array de string, onde cada elemento do array é uma linha de log do jogo.
+
+```typescript
+getPlayersNamesFromKillEventLine(line: string): IPlayersNames
+```
+Aceita uma linha de log como parâmetro e retorna, se existir, um objeto contento o nome do jogador que matou e o nome do jogador que morreu.
