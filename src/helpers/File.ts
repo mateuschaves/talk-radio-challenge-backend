@@ -26,8 +26,7 @@ class File {
             this.setFileContent(file);
             return this.getFileContent();
         } catch (error) {
-            Log.error(`file not found`);
-            return null;
+            throw new Error('file not found');
         }
     }
 }
