@@ -6,10 +6,12 @@
   "author": "Mateus Henrique <mateushenriquechaves1@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "tsc && node dist/src/server.js",
+    "start": "node dist/src/server.js",
     "start:dev": "ts-node-dev --respawn --transpileOnly ./src/server.ts",
+    "compile": "yarn tsc",
+    "test": "jest",
     "build": "tsc",
-    "test": "jest"
+    "postinstall": "npm run build"
   },
   "dependencies": {
     "@types/dotenv": "^8.2.0",
