@@ -104,18 +104,12 @@ class Game {
         let game_parsed = {
             total_kills,
             players,
-            kills: {}
+            kills: players.map(player => ({
+                player,
+                kills: this.getPlayerScore(player, game)
+            }))
+                .sort((a, b) => b.kills - a.kills)
         }
-
-        players.forEach(player => {
-            game_parsed = {
-                ...game_parsed,
-                kills: {
-                    ...game_parsed.kills,
-                    [`${player}`]: this.getPlayerScore(player, game)
-                }
-            }
-        });
 
         return {
             [`game_${id}`]: game_parsed

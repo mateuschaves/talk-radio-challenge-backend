@@ -49,10 +49,10 @@ describe('Game', () => {
             [`game_${gameId}`]: {
                 total_kills: 9,
                 players: ['Isgalamido', 'Mocinha'],
-                kills: {
-                    'Isgalamido': -9,
-                    'Mocinha': 0
-                }
+                kills: [
+                    { player: 'Mocinha', kills: 0 },
+                    { player: 'Isgalamido', kills: -9 },
+                ]
             }
         });
     });

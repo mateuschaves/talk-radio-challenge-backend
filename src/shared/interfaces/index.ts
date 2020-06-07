@@ -1,6 +1,6 @@
 import IPlayersNames from './IPlayersNames';
 import IGame from './IGame';
-import IRank from './iRank';
+import IRank from './IRank';
 
 export {
     IPlayersNames,
