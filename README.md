@@ -125,33 +125,31 @@ Obs: o parâmetro id é um número que inicia com 0 e representa individualmente
 Exemplo de resposta:
 ```json
 {
-    "game_3": {
-        "total_kills": 4,
-        "players": [
-            "Isgalamido",
-            "Mocinha",
-            "Zeh",
-            "Dono da Bola"
-        ],
-        "kills": [
-            {
-                "player": "Isgalamido",
-                "kills": 1
-            },
-            {
-                "player": "Mocinha",
-                "kills": 0
-            },
-            {
-                "player": "Dono da Bola",
-                "kills": -1
-            },
-            {
-                "player": "Zeh",
-                "kills": -2
-            }
-        ]
-    }
+    "total_kills": 4,
+    "players": [
+        "Isgalamido",
+        "Mocinha",
+        "Zeh",
+        "Dono da Bola"
+    ],
+    "kills": [
+        {
+            "player": "Isgalamido",
+            "kills": 1
+        },
+        {
+            "player": "Mocinha",
+            "kills": 0
+        },
+        {
+            "player": "Dono da Bola",
+            "kills": -1
+        },
+        {
+            "player": "Zeh",
+            "kills": -2
+        }
+    ]
 }
 ```
 
