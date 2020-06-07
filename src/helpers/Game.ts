@@ -1,4 +1,4 @@
-import { IPlayersNames, IGame } from '../shared/interfaces';
+import { IPlayersNames, IGame, IRank } from '../shared/interfaces';
 
 class Game {
 
@@ -87,7 +87,7 @@ class Game {
 
     }
 
-    public proccessGeneralRank(fileContent: string): any {
+    public proccessGeneralRank(fileContent: string): IRank[] {
         const players = [...this.getAllPlayersFromGame(fileContent)];
         return players.map(player => ({
             player,
