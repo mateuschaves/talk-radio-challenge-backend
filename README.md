@@ -106,6 +106,7 @@ proccessGameLogFile(file: string): IGame[]
 Aceita o conteúdo do arquivo de log e retorna um array com todos os jogos no formato especificado.
 
 # ``File.ts``
+Aqui estão concentrada todas as funções auxiliares relacionadas a leitura do arquivo de log.
 
 ```typescript
 readFile(fileName: string, encoding: EncondingOptions): string | null
