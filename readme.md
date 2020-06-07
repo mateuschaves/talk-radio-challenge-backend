@@ -91,6 +91,11 @@ getAllKillsFromGame(game: string): number
 Aceita os logs de um jogo como parâmetro e retorna a quantidade de kills que houveram na partida.
 
 ```typescript
+proccessGeneralRank(fileContent: string): IRank[]
+```
+Aceita o conteúdo do arquivo de log como parâmetro, e retorna a pontuação geral de todos os jogadores.
+
+```typescript
 parseGame(game: string, id: number): IGame
 ```
 Aceita os logs de um jogo e o seu id e retorna o no formato especificado as informações da partida.
