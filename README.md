@@ -156,3 +156,50 @@ Exemplo de resposta:
 ```
 
 GET ``/rank/general``
+
+Não aceita nenhum parâmetro e retorna um ranking de jogadores, considerando todas as partidas, com mais kills.
+
+```json
+[
+    {
+        "player": "Isgalamido",
+        "kills": 129
+    },
+    {
+        "player": "Zeh",
+        "kills": 116
+    },
+    {
+        "player": "Oootsimo",
+        "kills": 102
+    },
+    {
+        "player": "Assasinu Credi",
+        "kills": 71
+    },
+    {
+        "player": "Dono da Bola",
+        "kills": 33
+    },
+    {
+        "player": "Chessus",
+        "kills": 31
+    },
+    {
+        "player": "Mocinha",
+        "kills": 0
+    },
+    {
+        "player": "UnnamedPlayer",
+        "kills": 0
+    },
+    {
+        "player": "Maluquinho",
+        "kills": 0
+    },
+    {
+        "player": "Mal",
+        "kills": -15
+    }
+]
+```
