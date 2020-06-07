@@ -15,9 +15,9 @@ class Game {
 
         const lines = this.getGameLines(game);
 
-        const linesWithKillEvent = lines.filter(line => line.search('Kill') > 0);
+        const linesWithKillEvent = lines?.filter(line => line.search('Kill') > 0);
 
-        linesWithKillEvent.forEach(line => {
+        linesWithKillEvent?.forEach(line => {
             const { deadPlayerName, killerPlayerName } = this.getPlayersNamesFromKillEventLine(line);
 
             if (killerPlayerName != '<world>')
@@ -30,7 +30,7 @@ class Game {
     }
 
     private getGameLines(game: string): string[] {
-        return game.split(/\r\n|\r|\n/g);
+        return game?.split(/\r\n|\r|\n/g);
     }
 
     public getPlayersNamesFromKillEventLine(line: string): IPlayersNames {
@@ -53,7 +53,7 @@ class Game {
 
         const lines = this.getGameLines(game);
 
-        return lines.reduce((score, line) => {
+        return lines?.reduce((score, line) => {
             const { killerPlayerName, deadPlayerName } = this.getPlayersNamesFromKillEventLine(line);
 
             if (killerPlayerName === deadPlayerName && player == killerPlayerName)
@@ -75,7 +75,7 @@ class Game {
 
         const lines = this.getGameLines(game);
 
-        return lines.reduce((kills, line) => {
+        return lines?.reduce((kills, line) => {
 
             const { killerPlayerName, deadPlayerName } = this.getPlayersNamesFromKillEventLine(line);
 
@@ -89,7 +89,7 @@ class Game {
 
     public proccessGeneralRank(fileContent: string): IRank[] {
         const players = [...this.getAllPlayersFromGame(fileContent)];
-        return players.map(player => ({
+        return players?.map(player => ({
             player,
             kills: this.getPlayerScore(player, fileContent)
         }))
@@ -104,7 +104,7 @@ class Game {
         let game_parsed = {
             total_kills,
             players,
-            kills: players.map(player => ({
+            kills: players?.map(player => ({
                 player,
                 kills: this.getPlayerScore(player, game)
             }))
@@ -118,7 +118,7 @@ class Game {
 
     public proccessGameLogFile(file: string): IGame[] {
         const games = this.getAllGames(file);
-        return games.map((game, index) => this.parseGame(game, index));
+        return games?.map((game, index) => this.parseGame(game, index));
     }
 }
 
