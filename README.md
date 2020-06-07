@@ -112,3 +112,47 @@ Aqui estão concentrada todas as funções auxiliares relacionadas a leitura do 
 readFile(fileName: string, encoding: EncondingOptions): string | null
 ```
 Aceita o nome do arquivo e o tipo de codificação e retorna o conteúdo do arquivo informado.
+
+# API
+
+A API é possui duas rotas:
+
+GET ``/game/:id``
+
+Aceita como parâmetro o id de um jogo e retorna um objeto com as informações do jogo
+Obs: o parâmetro id é um número que inicia com 0 e representa individualmente cada partida.
+
+Exemplo de resposta:
+```json
+{
+    "game_3": {
+        "total_kills": 4,
+        "players": [
+            "Isgalamido",
+            "Mocinha",
+            "Zeh",
+            "Dono da Bola"
+        ],
+        "kills": [
+            {
+                "player": "Isgalamido",
+                "kills": 1
+            },
+            {
+                "player": "Mocinha",
+                "kills": 0
+            },
+            {
+                "player": "Dono da Bola",
+                "kills": -1
+            },
+            {
+                "player": "Zeh",
+                "kills": -2
+            }
+        ]
+    }
+}
+```
+
+GET ``/rank/general``
