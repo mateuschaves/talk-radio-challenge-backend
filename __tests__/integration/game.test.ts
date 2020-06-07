@@ -10,21 +10,19 @@ describe('Game', () => {
 
         expect(response.status).toBe(200);
         expect(response.body).toMatchObject({
-            [`game_${4}`]: {
-                "kills": [
-                    { player: "Zeh", kills: 20 },
-                    { player: "Isgalamido", kills: 19 },
-                    { player: "Assasinu Credi", kills: 11 },
-                    { player: "Dono da Bola", kills: 5 },
-                ],
-                "players": [
-                    "Isgalamido",
-                    "Dono da Bola",
-                    "Zeh",
-                    "Assasinu Credi"
-                ],
-                "total_kills": 100
-            }
+            "kills": [
+                { player: "Zeh", kills: 20 },
+                { player: "Isgalamido", kills: 19 },
+                { player: "Assasinu Credi", kills: 11 },
+                { player: "Dono da Bola", kills: 5 },
+            ],
+            "players": [
+                "Isgalamido",
+                "Dono da Bola",
+                "Zeh",
+                "Assasinu Credi"
+            ],
+            "total_kills": 100
         });
     });
 

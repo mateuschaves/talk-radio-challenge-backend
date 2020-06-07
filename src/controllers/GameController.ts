@@ -15,7 +15,7 @@ class GameController {
 
         const game = this.games[id];
         if (game)
-            return response.status(200).json(game);
+            return response.status(200).json(game[`game_${id}`]);
         else
             return response.status(400).json({
                 message: 'game not found'
