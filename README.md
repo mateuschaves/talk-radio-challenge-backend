@@ -119,7 +119,7 @@ A API é possui duas rotas:
 
 GET ``/game/:id``
 
-Aceita como parâmetro o id de um jogo e retorna um objeto com as informações do jogo
+Aceita como parâmetro o id de um jogo e retorna um objeto com as informações do jogo\
 Obs: o parâmetro id é um número que inicia com 0 e representa individualmente cada partida.
 
 Exemplo de resposta:
